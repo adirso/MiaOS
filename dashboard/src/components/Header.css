@@ -1,0 +1,63 @@
+.header {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-elevated);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  min-height: 3rem;
+}
+
+.header-nav-start {
+  flex: 1;
+}
+
+.header-nav-end {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-health {
+  font-size: 0.8125rem;
+  color: var(--color-fg-muted);
+}
+
+.header-health-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: default;
+}
+
+.header-health-label {
+  font-weight: 500;
+}
+
+.health-icon {
+  flex-shrink: 0;
+}
+
+.health-icon--healthy {
+  color: #22c55e;
+}
+
+.health-icon--unhealthy {
+  color: #ef4444;
+}
+
+.health-icon--checking {
+  color: var(--color-fg-subtle);
+  animation: health-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes health-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
