@@ -136,7 +136,7 @@ export function listAvailable(): (AvailableSkill & { enabled: boolean })[] {
 }
 
 /** Optional: when building write_code tool, call this before running the skill. */
-type GetModel = () => { model: unknown };
+type GetModel = () => import('ai').LanguageModelV1;
 
 /**
  * Build AI SDK tools from enabled skills only (repo + npm). Each skill becomes one tool.
@@ -168,7 +168,7 @@ export function buildSkillTools(getModel?: GetModel): ToolSet {
           if (getModel) {
             try {
               const model = getModel();
-              const review = await reviewCodeForUserRequest(model as import('ai').LanguageModelV1, requestSummary, code);
+              const review = await reviewCodeForUserRequest(model, requestSummary, code);
               if (!review.approved) {
                 return { error: `Code was not run: ${review.reason}`, approved: false };
               }

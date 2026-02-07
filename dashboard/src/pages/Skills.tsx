@@ -211,7 +211,7 @@ export function Skills() {
                       type="button"
                       className="skill-btn skill-btn--danger"
                       disabled={actionPackage === s.package}
-                      onClick={() => handleUninstall(s.package)}
+                      onClick={() => { const pkg = s.package; if (pkg) handleUninstall(pkg); }}
                     >
                       {actionPackage === s.package ? '…' : 'Uninstall'}
                     </button>

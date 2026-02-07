@@ -41,7 +41,7 @@ export async function reviewCodeForUserRequest(
     maxTokens: 200,
   });
 
-  const reply = (text.text || '').trim().toUpperCase();
+  const reply = (text || '').trim().toUpperCase();
   const approved = reply.startsWith('APPROVED:');
   const reason = reply.startsWith('APPROVED:')
     ? reply.slice(9).trim()
