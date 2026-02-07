@@ -7,7 +7,7 @@ import { homedir } from 'os';
 import { tool, jsonSchema, type ToolSet } from 'ai';
 import { runSkill } from './runner.js';
 import { listRepoSkills } from './repo.js';
-import { loadEnabledList, NPM_PREFIX, REPO_PREFIX } from './enabled.js';
+import { loadEnabledList, NPM_PREFIX } from './enabled.js';
 import { reviewCodeForUserRequest } from './codeReview.js';
 
 const DEFAULT_SKILLS_DIR = join(homedir(), '.miaos', 'skills');
