@@ -1,0 +1,29 @@
+{
+  "name": "miaos-skill-write-code",
+  "version": "1.0.0",
+  "description": "Write and run scripts in an isolated environment",
+  "skill": {
+    "id": "write-code",
+    "name": "Write Code",
+    "description": "Write a JavaScript (Node.js) script and run it in an isolated sandbox. Use when the user wants to run code, try a snippet, or execute a small script. Only JavaScript is supported. You must provide userRequest (what the user asked for) so the code can be reviewed before running. Returns stdout, stderr, and any error.",
+    "entryPoint": "run.js",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The JavaScript source code to run"
+        },
+        "userRequest": {
+          "type": "string",
+          "description": "Short summary of what the user asked the code to do (required for safety review before running)"
+        },
+        "timeoutSeconds": {
+          "type": "number",
+          "description": "Max seconds to run (default 15, max 60)"
+        }
+      },
+      "required": ["code", "userRequest"]
+    }
+  }
+}

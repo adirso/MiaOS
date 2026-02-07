@@ -4,7 +4,7 @@
  * Greets, then sends your messages to the LLM (OpenAI or Gemini) and prints the response.
  */
 import { createInterface } from 'readline';
-import { chat } from './agent';
+import { chat } from './agent.js';
 import 'dotenv/config';
 import type { CoreMessage } from 'ai';
 

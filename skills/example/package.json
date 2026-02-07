@@ -1,0 +1,18 @@
+{
+  "name": "miaos-skill-example",
+  "version": "1.0.0",
+  "description": "Example in-repo skill",
+  "skill": {
+    "id": "example",
+    "name": "Example",
+    "description": "A minimal example skill. Echoes a greeting with the given name.",
+    "entryPoint": "run.js",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Name to greet" }
+      },
+      "required": ["name"]
+    }
+  }
+}
