@@ -43,7 +43,7 @@ Your message is sent to the LLM; the reply is printed, and you can keep chatting
 ### Tech
 
 - **Language:** TypeScript
-- **Runtime:** Node.js 18+
+- **Runtime:** Node.js 22+
 - **Run:** `tsx` (no build step for `npm start`); use `npm run build` to compile to `dist/`
 - **AI:** Vercel AI SDK (`ai`), `@ai-sdk/openai`, `@ai-sdk/google`
 - **CLI:** Node `readline`, no extra CLI framework
