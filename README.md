@@ -1,10 +1,14 @@
 # MiaOS
 
-**Mia** – An intelligence assistant in the CLI (and later Web with React) with skills from a store. Think ClaudeCode / ClawdBot style: you chat with Mia, and she can run skills and help you get things done.
+**Mia** is an assistant that runs on your local computer. You chat with her in the terminal (and later in a web UI). She uses an LLM to answer questions and can run **skills**—either from an existing store or ones you create yourself.
 
-## Start: CLI agent
+**LLM options:** OpenAI, Grok, Google Gemini, or a local model via Ollama. You pick the provider via config or environment; your data stays on your machine when you use local/Ollama.
 
-The CLI greets you, then sends your messages to an LLM (OpenAI or Gemini) via the [Vercel AI SDK](https://sdk.vercel.ai) and prints the response. Conversation history is kept so you can have a multi-turn chat.
+**Skills:** Extend Mia with ready-made skills from the store or build custom skills for your own workflows. (Skills store and custom skills are coming in later updates.)
+
+## CLI agent (current)
+
+The CLI greets you, then sends your messages to the configured LLM via the [Vercel AI SDK](https://sdk.vercel.ai) and prints the response. Conversation history is kept so you can have a multi-turn chat. Right now OpenAI and Gemini are supported; Grok and Ollama support are planned.
 
 ### Setup
 
@@ -48,8 +52,8 @@ Your message is sent to the LLM; the reply is printed, and you can keep chatting
 - **AI:** Vercel AI SDK (`ai`), `@ai-sdk/openai`, `@ai-sdk/google`
 - **CLI:** Node `readline`, no extra CLI framework
 
-Provider is chosen automatically: if `OPENAI_API_KEY` is set, OpenAI is used; otherwise Gemini (if `GOOGLE_GENERATIVE_AI_API_KEY` is set).
+Provider is chosen automatically: if `OPENAI_API_KEY` is set, OpenAI is used; otherwise Gemini (if `GOOGLE_GENERATIVE_AI_API_KEY` is set). Grok and Ollama support are planned.
 
 ---
 
-*Planned: Web UI (React), skills store, and running skills from the assistant.*
+*Planned: Web UI (React), skills store, custom skills, and Grok/Ollama providers.*
